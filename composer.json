@@ -1,0 +1,8 @@
+{
+  "name": "mikface/dir-sync",
+  "autoload": {
+    "psr-4": {
+      "DirSync\\": "src/"
+    }
+  }
+}
