@@ -7,6 +7,10 @@ use DirSync\config\Constants;
 
 class DirSync implements DirSyncInterface
 {
+    const SYNC_CREATE_ONLY = 'SYNC_CREATE_ONLY';
+    const SYNC_REMOVE_ONLY = 'SYNC_REMOVE_ONLY';
+    const SYNC_ACTIONS_ONLY = 'SYNC_ACTIONS_ONLY';
+
     private $rootDir;
     private $jsonPath;
     private $jsonInput;
@@ -165,16 +169,16 @@ class DirSync implements DirSyncInterface
 
     private function actionAllowed()
     {
-        return $this->options === null || $this->options === Constants::SYNC_ACTIONS_ONLY;
+        return $this->options === null || $this->options === self::SYNC_ACTIONS_ONLY;
     }
 
     private function createAllowed()
     {
-        return $this->options === null || $this->options === Constants::SYNC_CREATE_ONLY;
+        return $this->options === null || $this->options === self::SYNC_CREATE_ONLY;
     }
 
     private function removeAllowed()
     {
-        return $this->options === null || $this->options === Constants::SYNC_REMOVE_ONLY;
+        return $this->options === null || $this->options === self::SYNC_REMOVE_ONLY;
     }
 }

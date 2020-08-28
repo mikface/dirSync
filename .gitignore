@@ -3,3 +3,4 @@ test.php
 test.JSON
 testRoot
 vendor
+tests/tmp
